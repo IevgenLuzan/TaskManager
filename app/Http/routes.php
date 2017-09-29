@@ -14,17 +14,27 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/index', 'TaskController@index');
 
+Route::get('/taskid', 'TaskController@TaskId');
 
-
-Route::get('/home_admin', 'HomeController@home');
-Route::get('/home_user', 'HomeController@home');
-Route::get('/task_user', 'TaskController@store');
-Route::get('/edit', 'TaskController@edit');
+Route::get('/getEdit', 'TaskController@edit');
 Route::delete('/task/{task}', 'TaskController@destroy');
-Route::post('/task/add', 'TaskController@add');
-Route::post('/task/edit', 'TaskController@edit');      
-   
-Route::get('/home', 'HomeController@index');
+Route::post('/task/add', 'TaskController@add') ;
+Route::post('/task/postEdit', 'TaskController@edit');
+Route::post('/task/done', 'TaskController@done');
+
+
+
+
+//Route::get('/home_admin', 'HomeController@home');
+//Route::get('/home_user', 'HomeController@home');
+//Route::get('/task_user', 'TaskController@store');
+//Route::get('/edit', 'TaskController@edit');
+//Route::delete('/task/{task}', 'TaskController@destroy');
+//Route::post('/task/add', 'TaskController@add');
+//Route::post('/task/edit', 'TaskController@edit');      
+//   
+//Route::get('/home', 'HomeController@index');
 Route::auth();
 
