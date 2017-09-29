@@ -14,7 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/index', 'TaskController@index');
+//Route::get('/index', 'TaskController@index');
+Route::get('/index', function (){
+    return view('home_adm');
+});
 
 Route::get('/taskid', 'TaskController@TaskId');
 
