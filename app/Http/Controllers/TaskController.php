@@ -11,4 +11,8 @@ class TaskController extends Controller
     public function index(){
 	echo 'Yess!';
     }
+    public function destroy($taskId){
+	$taskId->delete();
+	return redirect('/index');
+    }
 }
