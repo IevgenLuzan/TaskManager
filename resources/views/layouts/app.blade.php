@@ -7,12 +7,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.css">
-    <link rel="stylesheet" href="fonts/">
-    <script src="js/bootstrap.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="css/individual.css">
+    <link type="text/javascript" src="{{ asset('assets/js/jquery-3.2.1.min.js') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap-theme.css') }}" />
+    <link type="text/javascript" src="{{ asset('assets/js/bootstrap.js') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/individual.css') }}" />
 </head>
 
 <body>
@@ -37,7 +36,6 @@
     </nav>
     @yield('content')
 </div>
-
 </body>
 </html>
 
