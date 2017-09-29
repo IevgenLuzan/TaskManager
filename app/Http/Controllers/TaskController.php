@@ -15,4 +15,9 @@ namespace App\Http\Controllers\Auth;
  */
 class TaskController {
     //put your code here
+    
+   public function index(){
+	echo 'Yeees!';
+    }
 }
+
