@@ -22,3 +22,6 @@ Route::delete('/task/{task}', 'TaskController@destroy');
 Route::post('/task/add', 'TaskController@add');
 Route::post('/task/edit', 'TaskController@edit');      
         
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
