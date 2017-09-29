@@ -13,7 +13,7 @@ namespace App\Http\Controllers\Auth;
  *
  * @author De
  */
-class TaskController {
+class TaskController extends Co{
     //put your code here
     
    public function index(){
