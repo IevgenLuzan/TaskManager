@@ -13,7 +13,7 @@ class Tasks extends Migration {
     public function up() {
         Schema::create('Tasks', function (Blueprint $table) {
             $table->increments('id');
-            $table->varchar('name');
+            $table->char('name', 50);
             $table->string('description');
             //$table->timestamps();
         });

@@ -11,9 +11,9 @@ class Users extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('Users', function (Blueprint $table) {
+        Schema::create('Userss', function (Blueprint $table) {
             $table->increments('id');
-            $table->varchar('name');
+            $table->char('name', 50);;
             $table->enum('role', ['teacher', 'student']);
             //$table->timestamps();
         });
