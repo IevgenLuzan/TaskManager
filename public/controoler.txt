@@ -1,0 +1,16 @@
+TaskController index()- Отображение всех задач для всех пользователей, форма добавл. новой задачи(add())
+TaskController TaskId() - Отображение конкретной задачи с развернутой информацией, есть кнопки удалить(delete)/редактировать(edit)
+TaskController add() - создание новой задачи
+TaskController getEdit - перекидывает на втюху редактирования
+TaskController postEdit() - редактирование задачи в БД
+TaskController destroy() - удаление задачи
+TaskController usersTask () - отобр. всех задач конкретного юзера
+TaskController done() - зада выролнена
+
+UserController userIndex - личная страница юзера
+UserController allUsers - отоброжение всех юзеров
+UserController editUser () - редактировани личной инфы
+
+AuthController create() - регистрация нового юзера
+AuthControoler validator() - проверка на наличие зареганного юзера
+
