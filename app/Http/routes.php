@@ -16,7 +16,7 @@ use App\User;
 //    return view('welcome');
 //});
 //Route::get('/index', 'TaskController@index');
-Route::get('/index', function (User $user) {
+Route::get('/', function (User $user) {
     if ($user->role == 'student') {
 	return view('home_usr');
     } else {
