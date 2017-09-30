@@ -25,13 +25,14 @@
         <hr>
         <hr>
         <div class="row" id="marg_top">
-
+            <h4 class="name_mrgn" style="color: #5e5e5e;">Все задачи учеников:</h4>
+            <hr style="margin-top: -0.5%; margin-bottom: 2%">
             <table class="table table-inverse table-hover">
                 <thead>
                 <tr class="nohover">
                     <th>Задача</th>
                     <th>Ученик</th>
-                    <th>Удаление</th>
+                    <th>Облегчить участь</th>
                 </tr>
                 </thead>
                 <tbody>

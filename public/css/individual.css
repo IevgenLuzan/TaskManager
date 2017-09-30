@@ -29,7 +29,7 @@ body {
     color: #F7E1B9;
 }
 
-tr:hover:not(.nohover) {
+td:hover:not(.nohover) {
     text-decoration: underline;
     color: #E3B359;
     cursor: pointer;
@@ -45,7 +45,7 @@ hr {
 }
 
 #marg_top {
-    margin-top: 3%;
+    margin-top: 4%;
     font-weight: 500;
 }
 

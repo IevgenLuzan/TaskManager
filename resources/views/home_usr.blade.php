@@ -25,7 +25,8 @@
         <hr>
         <hr>
         <div class="row" id="marg_top">
-
+            <h4 class="name_mrgn" style="color: #5e5e5e;">Мои задачи:</h4>
+            <hr style="margin-top: -0.5%; margin-bottom: 2%">
             <table class="table table-inverse table-hover">
                 <thead>
                 <tr class="nohover">
