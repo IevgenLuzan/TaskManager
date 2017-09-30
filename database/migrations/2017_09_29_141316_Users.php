@@ -11,11 +11,14 @@ class Users extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('Userss', function (Blueprint $table) {
-            $table->increments('id');
-            $table->char('name', 50);;
+        Schema::create('Users', function (Blueprint $table) {
+            $table->integer('user_id')->unsigned()->index();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->rememberToken();
             $table->enum('role', ['teacher', 'student']);
-            //$table->timestamps();
+            $table->timestamps();            
         });
     }
 
