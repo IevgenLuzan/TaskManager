@@ -1,0 +1,102 @@
+body {
+    background-image: url("../img/body.png");
+}
+
+.base {
+    border: solid 1px #e2e2e2;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: radial-gradient(40% 50%, #e2e2e2, #FFFFFF);
+}
+
+.font {
+    font-size: 110%;
+    font-weight: 450;
+}
+
+#logo {
+    font-weight: bold;
+    color: #E3B359;
+}
+
+#menu_el {
+    color: #E3B359;
+    font-weight: 500;
+}
+
+#menu_el:hover {
+    color: #F7E1B9;
+}
+
+tr:hover:not(.nohover) {
+    text-decoration: underline;
+    color: #E3B359;
+    cursor: pointer;
+}
+
+hr {
+    border: none;
+    margin-bottom: -1.5%;
+    font-weight: bold;
+    color: #E9E8E5;
+    background-color: #E9E8E5;
+    height: 1px;
+}
+
+#marg_top {
+    margin-top: 4%;
+    font-weight: 500;
+}
+
+.form-inline {
+
+    margin-bottom: 4%;
+}
+
+.task_panel {
+    border: solid 1px #e2e2e2;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: radial-gradient(40% 50%, #FBFAFA, #FDFBFB);
+    color: #3D3C3C;
+    margin: 2% 10% 2% 10%;
+}
+
+.usr_task_btn {
+    margin-bottom: 1.5%;
+}
+
+.usr_task_btn button {
+    width: 256px;
+}
+
+.adm_task_btn {
+    margin: 11% 2% 1.5% 2%;
+}
+
+.adm_task_btn_ext {
+    margin-top: 1%;
+}
+
+.mrgn_login {
+    margin-top: 3%;
+}
+
+@media (min-width: 992px) {
+    .mrgn_login {
+        margin-top: 3%;
+        margin-left: 19%;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .mrgn_login {
+        margin-top: 3%;
+        margin-left: 21%;
+    }
+
+
+}
