@@ -62,7 +62,7 @@
                                             <i class="fa fa-btn fa-sign-in"></i> Регистрация
                                         </a>
                                         <br/>
-                                        <a class="a" href="{{ url('/password/reset') }}">Забыли пароль?</a>
+                                        <a style="display: none;" class="a" href="{{ url('/password/reset') }}">Забыли пароль?</a>
                                     </div>
                                 </div>
                             </div>
