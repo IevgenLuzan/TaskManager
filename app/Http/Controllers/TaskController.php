@@ -26,7 +26,7 @@ class TaskController extends Controller
 
         $users = user::select(['id', 'name'])->get();
         // dump($tasks);
-        return view('home_adm')->with(['tasks' => $tasks,'users'=>$users]);
+        return view('home_adm')->with(['tasks' => $tasks, 'users' => $users]);
 
     }
 
@@ -34,15 +34,17 @@ class TaskController extends Controller
      * Определение роли юзера
      * @param User $user
      */
-    public function role(User $user){
+    public function role(User $user)
+    {
         $tasks = task::select(['id', 'name', 'description'])->get();
         $users = user::select(['id', 'name'])->get();
-            if ($user->role == 'student') {
-                return view('home_usr')->with(['tasks' => $tasks,'users'=>$users]);
-            } else {
-                return view('home_adm')->with(['tasks' => $tasks,'users'=>$users]);
-            }
+        if ($user->role == 'student') {
+            return view('home_usr')->with(['tasks' => $tasks, 'users' => $users]);
+        } else {
+            return view('home_adm')->with(['tasks' => $tasks, 'users' => $users]);
+        }
     }
+
     /**
      * Отображение конкретной задачи с развернутой информацией, есть кнопки удалить(delete)/редактировать(edit)
      */
@@ -58,12 +60,22 @@ class TaskController extends Controller
      */
     public function add()
     {
-    return view('create_task');
+        return view('create_task');
     }
 
-    public function create()
+    public function create(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'description' => 'required|filled'
+        ]);
 
+        $request->user()->tasks()->create([
+            'name' => $request->name,
+            'description' => $request - description,
+        ]);
+
+        return redirect('/');
     }
 
     /**

@@ -28,7 +28,7 @@ Route::get('task{id}', 'TaskController@TaskId')->name('TaskId');
 
 
 Route::get('/add', 'TaskController@add');
-Route::post('page/add','TaskController@create');
+Route::post('/pageadd','TaskController@create')->name('createTask');
 
 
 
