@@ -3,44 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests;
-
+use App\Task;
+use App\User;
 class TaskController extends Controller {
 
     /**
      * Отображение всех задач для всех пользователей, форма добавл. новой задачи(add())
      */
     public function index() {
-	
+        $tasks= task::select(['id','name','description','user_id'])->get();
+        dump($tasks);
+        return view('home_adm')->with(['tasks'=>$tasks]);
+
     }
 
     /**
      * Отображение конкретной задачи с развернутой информацией, есть кнопки удалить(delete)/редактировать(edit)
      */
     public function TaskId() {
-	
+
     }
 
     /**
      * создание новой задачи
      */
     public function add() {
-	$this->validate($request, [
-	    'name' => 'required|max:255',
-	]);
 
-	$request->user()->tasks()->create([
-	    'name' => $request->name,
-	]);
-
-	return redirect('/index');
     }
 
     /**
      * перекидывает на втюху редактирования
      */
     public function getEdit() {
-	return redirect('/');
     }
 
     /**
