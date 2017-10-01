@@ -26,37 +26,31 @@
         <hr>
         <div class="row" id="marg_top">
             <h4 class="name_mrgn" style="color: #5e5e5e;">Все задачи учеников:</h4>
-            <hr style="margin-top: -0.5%; margin-bottom: 2%">
             <table class="table table-inverse table-hover">
                 <thead>
                 <tr class="nohover">
                     <th>Задача</th>
                     <th>Ученик</th>
+                    <th>Узнать больше</th>
                     <th>Облегчить участь</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>Помыть пол</td>
-                    <td>Василий Помпеевич</td>
-                    <td>
-                        <!--<input style="margin-right: 4px; width: 150px;" type="button" class="btn btn-warning" value="Изменить">--><input
-                                type="button" style="width: 150px;" class="btn btn-danger" value="Удалить"></td>
-                </tr>
-                <tr>
-                    <td>Спроектировать сапог</td>
-                    <td>Олег Еврентьев</td>
-                    <td>
-                        <!--<input style="margin-right: 4px; width: 150px;" type="button" class="btn btn-warning" value="Изменить">--><input
-                                type="button" style="width: 150px;" class="btn btn-danger" value="Удалить"></td>
-                </tr>
-                <tr>
-                    <td>Убить жука</td>
-                    <td>Николай Пенсельвальскый</td>
-                    <td>
-                        <!--<input style="margin-right: 4px; width: 150px;" type="button" class="btn btn-warning" value="Изменить">--><input
-                                type="button" style="width: 150px;" class="btn btn-danger" value="Удалить"></td>
-                </tr>
+                @foreach($tasks as $task)
+
+                    <tr>
+                        <td>{{$task->description}}</td>
+                        <td>{{$task->user_id}}</td>
+                        <td><a class="btn btn-primary" href="{{ route ('TaskId',['id'=>$task->id]) }}">Подробнее</a>
+                        </td>
+                        >
+                        <td>
+                            <!--<input style="margin-right: 4px; width: 150px;" type="button" class="btn btn-warning" value="Изменить">--><input
+                                    type="button" style="width: 150px;" class="btn btn-danger" value="Удалить"></td>
+                    </tr>
+
+                @endforeach
+
                 </tbody>
             </table>
         </div>
@@ -69,16 +63,22 @@
         <div class="row">
             <div class="col-xs-12 col-md-3 col-lg-3">
                 <select class="form-control">
-                    <option>Василий Помпеевич</option>
-                    <option>Олег Еврентьев</option>
-                    <option>Николай Пенсельвальскый</option>
+                    @foreach($users as $user)
+                        <option>{{$user->name}}</option>
+                    @endforeach
                 </select>
+
             </div>
             <div class="col-xs-12 col-md-7 col-lg-7">
                 <form class="form-inline" role="form">
                     <div style="display: inline-block; font-weight: 500;">Задача:</div>
-                    <input type="text" class="form-control" placeholder="Введите задачу">
+                    <select class="form-control">
+                        @foreach($tasks as $task)
+                            <option>{{$task->name}}</option>
+                        @endforeach
+                    </select>
                     <button type="button" class="btn btn-success">Добавить</button>
+                    <a href="/add" type="button" class="btn btn-success">Создать новую задачу</a>
                 </form>
             </div>
         </div>

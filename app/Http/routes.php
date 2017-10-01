@@ -1,6 +1,10 @@
 <?php
 
 use App\User;
+use App\Http\Controllers\{
+    TaskController, UserController
+};
+
 /*
   |--------------------------------------------------------------------------
   | Application Routes
@@ -15,26 +19,24 @@ use App\User;
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-//Route::get('/index', 'TaskController@index');
-Route::get('/', function (User $user) {
-    if ($user->role == 'student') {
-	return view('home_usr');
-    } else {
-	return view('home_adm');
-    }
-});
 Route::auth();
+Route::get('/index', 'TaskController@index');
+Route::get('/' , 'TaskController@role');
+Route::get('task{id}', 'TaskController@TaskId')->name('TaskId');
 
-Route::get('/taskid', 'TaskController@TaskId');
+
+
+
+Route::get('/add', 'TaskController@add');
+Route::post('page/add','TaskController@create');
+
+
+
 
 Route::get('/getEdit', 'TaskController@edit');
 Route::delete('/task/{task}', 'TaskController@destroy');
-Route::post('/task/add', 'TaskController@add');
 Route::post('/task/postEdit', 'TaskController@edit');
 Route::post('/task/done', 'TaskController@done');
-
-
-
 
 //Route::get('/home_admin', 'HomeController@home');
 //Route::get('/home_user', 'HomeController@home');
