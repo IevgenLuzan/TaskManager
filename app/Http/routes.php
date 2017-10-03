@@ -1,10 +1,9 @@
 <?php
 
-//use App\User;
-//use App\Http\Controllers\{
-//    TaskController, UserController
-//};
-//use TaskController
+use App\User;
+use App\Http\Controllers\{
+    TaskController, UserController
+};
 
 /*
   |--------------------------------------------------------------------------
