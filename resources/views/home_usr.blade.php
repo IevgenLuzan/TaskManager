@@ -4,15 +4,14 @@
 
     <div class="container-fluid base">
         <div class="row">
-            @foreach($tasks as $task)
-                <div class="col-md-5">
-                    <h3 class="name_mrgn">{{$task->name}}</h3>
-                </div>
-                <div class="col-md-3 col-md-offset-4">
-                    <h3 style="color: #7C7B7B">Ученик</h3>
-                    <hr class="hr_media_usr">
-                </div>
-            @endforeach
+            <div class="col-md-5">
+                <h3 class="name_mrgn">Петя Петя</h3>
+            </div>
+            <div class="col-md-3 col-md-offset-4">
+                <h3 style="color: #7C7B7B">Ученик</h3>
+                <hr class="hr_media_usr">
+            </div>
+
         </div>
         <div class="row">
             <div class="col-md-5">
@@ -26,27 +25,32 @@
         <hr>
         <hr>
         <div class="row" id="marg_top">
-            <h4 class="name_mrgn" style="font-size: 21px; color: #908F8F;">Мои задачи:</h4>
+            <h4 class="name_mrgn" style="color: #5e5e5e;">Мои задачи:</h4>
             <hr style="margin-top: -0.5%; margin-bottom: 2%">
             <table class="table table-inverse table-hover">
                 <thead>
                 <tr class="nohover">
                     <th>Задачи</th>
                     <th>Учитель</th>
-                    <th>Отчётность:</th>
+                    <!--                <th>Отчётность:</th>-->
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($tasks as $task)
-
-                    <tr>
-                        <td>{{$task->description}}</td>
-                        <td>Реализовать имя учителя</td>
-                        <td><a href="" style="width: 150px;"
-                               class="btn btn-success">Отписать</a></td>
-                    </tr>
-
-                @endforeach
+                <tr>
+                    <td>Помыть пол</td>
+                    <td>Павел Венедиктович</td>
+                    <!--                <td><input style="width: 150px" type="button" class="btn btn-info" value="Отписать"></td>-->
+                </tr>
+                <tr>
+                    <td>Помыть пол ещё раз</td>
+                    <td>Павел Венедиктович</td>
+                    <!--                <td><input style="width: 150px" type="button" class="btn btn-info" value="Отписать"></td>-->
+                </tr>
+                <tr>
+                    <td>Я вижу пятно</td>
+                    <td>Павел Венедиктович</td>
+                    <!--                <td><input style="width: 150px" type="button" class="btn btn-info" value="Отписать"></td>-->
+                </tr>
                 </tbody>
             </table>
         </div>
