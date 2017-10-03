@@ -36,12 +36,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                      @foreach($tasks as $task)
+                @foreach($tasks as $task)
 
                     <tr>
-                        <td>{{$task->task_id}}</td>
+                        <td>{{$task->description}}</td>
                         <td>{{$task->user_id}}</td>
-                        <td><a class="btn btn-primary" href="{{ route ('TaskId',['id'=>$task->task_id]) }}">Подробнее</a>
+                        <td><a class="btn btn-primary" href="{{ route ('TaskId',['id'=>$task->id]) }}">Подробнее</a>
                         </td>
                         >
                         <td>
