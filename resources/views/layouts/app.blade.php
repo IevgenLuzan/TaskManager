@@ -29,7 +29,11 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="col-md-7"><a href="">
-                        <div id="menu_el">lavrentiy@mail.com</div>
+                        <div id="menu_el">@if (Auth::guest())
+						guest
+					@else
+						{{ Auth::user()->name }}
+					@endif</div>
                     </a></li>
                 <li><a href="{{ url('/logout') }}">
                         <div id="menu_el"><span class="glyphicon glyphicon-log-in"></span> Выйти</div>
