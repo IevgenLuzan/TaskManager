@@ -12,7 +12,7 @@ class Users extends Migration {
      */
     public function up() {
         Schema::create('Users', function (Blueprint $table) {
-            $table->integer('user_id')->unsigned()->index();
+            $table->integer('id')->unsigned()->index();
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
