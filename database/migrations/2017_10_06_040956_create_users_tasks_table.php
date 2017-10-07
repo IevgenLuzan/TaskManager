@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Users extends Migration {
+class CreateUsersTasksTable extends Migration {
 
     /**
      * Run the migrations.
@@ -12,13 +11,11 @@ class Users extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('Users', function (Blueprint $table) {
+        Schema::create('users_tasks', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
-            $table->enum('role', ['teacher', 'student']);
+            $table->integer('user_id')->unsigned()->index();
+            $table->integer('task_id')->unsigned()->index();
+            $table->enum('condition', ['new', 'done']);
             $table->timestamps();
         });
     }
@@ -29,7 +26,7 @@ class Users extends Migration {
      * @return void
      */
     public function down() {
-        Schema::drop('Users');
+        Schema::drop('users_tasks');
     }
 
 }

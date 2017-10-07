@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('content')
@@ -5,10 +6,10 @@
     <div class="container-fluid base">
         <div class="row">
             <div class="col-md-5">
-                <h3 class="name_mrgn">Вася Вася</h3>
+                <h3 class="name_mrgn">{{$user->name}}</h3>
             </div>
             <div class="col-md-3 col-md-offset-4">
-                <h3 style="color: #7C7B7B">Учитель</h3>
+                <h3 style="color: #7C7B7B">{{$user->email}}</h3>
                 <hr class="hr_media_adm">
             </div>
 
