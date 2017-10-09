@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Task;
 use App\User;
-use App\Http\Controllers\Auth\AuthController;
+use App\Users_task;
 use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller {
@@ -35,10 +35,11 @@ class TaskController extends Controller {
     public function role(User $user) {
         $tasks = Task::all();
         $users = User::all();
+        $user_tasks = Users_task::all();
         if ($user->role == 'student') {
             return view('home_usr')->with(['tasks' => $tasks, 'users' => $users, 'user' => user()]);
         } else {
-            return view('home_adm')->with(['tasks' => $tasks, 'users' => $users, 'user' => Auth::user()]);
+            return view('home_adm')->with(['tasks' => $tasks, 'users' => $users, 'user' => Auth::user(), 'user_tasks' => $user_tasks]);
         }
     }
 
@@ -47,7 +48,6 @@ class TaskController extends Controller {
      */
     public function TaskId($id) {
         $tasks = task::select(['id', 'name', 'description'])->where('id', $id)->first();
-        // dump($tasks);
         return view('task_adm')->with(['tasks' => $tasks]);
     }
 
@@ -55,20 +55,25 @@ class TaskController extends Controller {
      * создание новой задачи
      */
     public function add() {
-        $users = User::all();
-        return view('create_task')->with(['users'=>$users]);
+        return view('create_task');
+    }
+
+    public function set() {
+   return view('create_task');
+//        DB::table('users_tasks')->insert(
+//                ['user_is' => $user_id, 'task_id' => $task_id, 'task_condition'=>$task_condition]
+//        );
     }
 
     public function create(Request $request) {
         $this->validate($request, [
             'name' => 'required|max:255',
             'description' => 'required|filled',
-            'userName' => 'required'
         ]);
 
         $request->user()->tasks()->create([
             'name' => $request->name,
-            'description' => $request -> description,
+            'description' => $request->description,
         ]);
 
         return redirect('/');

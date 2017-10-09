@@ -8,6 +8,6 @@ class Task extends Model
 {
     public function users()
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(User::class, 'users_tasks');
     }
 }
